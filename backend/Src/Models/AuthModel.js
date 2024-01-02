@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const adminData = mongoose.Schema({
+const AuthModel = mongoose.Schema({
     name: {
         type: String,
         require: true
@@ -13,16 +13,8 @@ const adminData = mongoose.Schema({
         type: String,
         require: true,
         select: false
-    },
-    image: {
-        type: String,
-        require: true
-    },
-    role: {
-        type: String,
-        require: true
     }
 });
 
-const AdminDataModel = mongoose.model('admins', adminData);
-module.exports = AdminDataModel;
+const AuthDataModel = mongoose.model('Auth', AuthModel);
+module.exports = AuthDataModel;

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const adminData = mongoose.Schema({
+const ContactData = mongoose.Schema({
     name: {
         type: String,
         require: true
@@ -9,20 +9,21 @@ const adminData = mongoose.Schema({
         type: String,
         require: true
     },
-    password: {
+    Phone_Number: {
         type: String,
-        require: true,
-        select: false
+        require: true
+       
+    },
+   Address: {
+        type: String,
+        require: true
     },
     image: {
         type: String,
         require: true
-    },
-    role: {
-        type: String,
-        require: true
     }
+
 });
 
-const AdminDataModel = mongoose.model('admins', adminData);
-module.exports = AdminDataModel;
+const ContactDataModel = mongoose.model('contact', ContactData);
+module.exports = ContactDataModel;
